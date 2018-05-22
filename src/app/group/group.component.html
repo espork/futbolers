@@ -1,0 +1,39 @@
+<div mat-dialog-content>
+    <mat-form-field>
+        <input matInput placeholder="Name" [(ngModel)]="group.name">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select placeholder="Day of week" [(ngModel)]="group.dayOfWeek">
+            <mat-option *ngFor="let day of daysOfWeek" [value]="day">
+            {{ day }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput type="time" name="start" placeholder="Start" [(ngModel)]="group.start">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput type="time" placeholder="End" required [(ngModel)]="group.end">
+    </mat-form-field>
+    
+    <mat-form-field>
+        <input matInput placeholder="Address" [(ngModel)]="group.address">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Players per game" type="number" [(ngModel)]="group.maxPlayers">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Limit to vote" type="number" [(ngModel)]="group.limitVote">
+        <span matSuffix>hour(s)</span>
+    </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+    <button mat-button (click)="onSaveClick()" cdkFocusInitial>Save</button>
+</div>

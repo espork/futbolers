@@ -1,0 +1,38 @@
+<div class="games-played-container">
+    <mat-card *ngFor="let game of games">
+        <mat-card-header>
+            <mat-card-title>{{game.dateDescription()}}</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <div class="content-row">
+                <div class="player-info">
+                    <div mat-card-avatar class="player-picture"></div>
+                    <span>{{game.beast().name}}</span>
+                    <span class="good-result">BEAST</span>
+                </div>
+                <div class="player-info">
+                    <div mat-card-avatar class="player-picture"></div>
+                    <span matBadge="{{game.topScorer().goals}}" matBadgeOverlap="false">
+                        {{game.topScorer().player.name}}
+                    </span>
+                    <span class="good-result">TOP SCORER</span>
+                </div>
+            </div>
+            <div class="content-row">
+                <div class="player-info">
+                    <div mat-card-avatar class="player-picture"></div>
+                    <span>{{game.worst().name}}</span>
+                    <span class="bad-result">WORST</span>
+                </div>
+                <div class="player-info">
+                    <div mat-card-avatar class="player-picture"></div>
+                    <span matBadge="{{game.topAssistant().assists}}" matBadgeOverlap="false">
+                        {{game.topAssistant().player.name}}
+                    </span>
+                    <span class="good-result">TOP ASSISTANT</span>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,55 @@
+<div class="upcoming-containter" *ngIf="game">
+
+  <h1> {{game.dateDescription()}}</h1>
+  <mat-card class="going-container">
+    <mat-card-header>
+      <mat-card-title>Going - {{ game.going.length }}</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div *ngFor="let player of game.going">
+          <div mat-card-avatar class="player-picture"></div>
+          <div class="player-info">
+              <span>{{ player.name }}</span>
+              <span class="player-position">{{ player.position }}</span>
+          </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="declined-container">
+    <mat-card-header>
+      <mat-card-title>Declined - {{ game.declined.length }}</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div *ngFor="let player of game.declined">
+          <div mat-card-avatar class="player-picture"></div>
+          <div class="player-info">
+              <span>{{ player.name }}</span>
+              <span class="player-position">{{ player.position }}</span>
+          </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="invited-container">
+    <mat-card-header>
+      <mat-card-title>Invited - {{ game.invited.length }}</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div *ngFor="let player of game.invited">
+          <div mat-card-avatar class="player-picture"></div>
+          <div class="player-info">
+              <span>{{ player.name }}</span>
+              <span class="player-position">{{ player.position }}</span>
+          </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
+</div>
+<div *ngIf="!game">
+  No game cheduled :(
+</div>

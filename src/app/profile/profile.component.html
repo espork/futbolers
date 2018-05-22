@@ -1,0 +1,37 @@
+<div mat-dialog-content>
+    <mat-form-field>
+        <input matInput placeholder="Name" [(ngModel)]="player.name">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Email" [(ngModel)]="player.email" type="email">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select placeholder="Gender" [(ngModel)]="player.gender">
+            <mat-option [value]="male">Male</mat-option>
+            <mat-option [value]="female">Female</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select placeholder="Position" [(ngModel)]="player.position">
+            <mat-option *ngFor="let position of positions()" [value]="position">
+                {{position}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput 
+            placeholder="Birth date" 
+            [matDatepicker]="birthDp" 
+            [(ngModel)]="player.birthDate">
+        <mat-datepicker-toggle matSuffix [for]="birthDp"></mat-datepicker-toggle>
+        <mat-datepicker #birthDp [startAt]="startDate"></mat-datepicker>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+    <button mat-button (click)="onSaveClick()" cdkFocusInitial>Save</button>
+</div>

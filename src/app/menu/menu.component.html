@@ -1,0 +1,22 @@
+<button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" class="main-menu" [overlapTrigger]="false">
+    <div class="my-groups">
+        <h4>My Groups</h4>
+    </div>
+    
+    <mat-divider></mat-divider>
+    <div>
+        <button mat-menu-item 
+            *ngFor="let group of groups"
+            (click)="onSelectGroup(group)">
+            {{group.name}}
+        </button>
+        <button mat-menu-item (click)="openCreateGroup()">Create group</button>
+    </div>
+    
+    <mat-divider></mat-divider>
+    <button mat-menu-item (click)="openProfile()">Profile</button>
+    <button mat-menu-item>Logout</button>
+</mat-menu>
