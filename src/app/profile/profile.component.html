@@ -8,14 +8,14 @@
     </mat-form-field>
 
     <mat-form-field>
-        <mat-select placeholder="Gender" [(ngModel)]="player.gender">
-            <mat-option [value]="male">Male</mat-option>
-            <mat-option [value]="female">Female</mat-option>
+        <mat-select placeholder="Gender" [(ngModel)]="player.gender" [value]="player.gender">
+            <mat-option value="m">Male</mat-option>
+            <mat-option value="f">Female</mat-option>
         </mat-select>
     </mat-form-field>
 
     <mat-form-field>
-        <mat-select placeholder="Position" [(ngModel)]="player.position">
+        <mat-select placeholder="Position" [(ngModel)]="player.position" [value]="player.position.valueOf">
             <mat-option *ngFor="let position of positions()" [value]="position">
                 {{position}}
             </mat-option>

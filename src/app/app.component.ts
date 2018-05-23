@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   
   selectedGroup: Group;
   player: Player;
+  loading: boolean = false;
   constructor(
     private groupService: GroupService,
     private playerService: PlayerService
@@ -23,23 +24,26 @@ export class AppComponent implements OnInit {
   }
 
   load(): void {
+    this.loading = true;
     this.playerService.load(1).subscribe( player => {
-
-      console.log(player)
       this.player = player;
+      console.log(this.player.groups)
       this.loadGroup(player.groups[0], player)
     })
   }
   
   loadGroup(group: IGroupInfo, player:Player): void {
+    setTimeout( () => {
     this.groupService.load(group.id, player)
         .subscribe( group => {
-          console.log(group)
           this.selectedGroup = group
+          this.loading = false;
         });
+      }, 2000)
   }
 
   onSelectGroup(group: IGroupInfo): void {
+    this.loading = true;
     this.loadGroup(group, this.player)
   }
 

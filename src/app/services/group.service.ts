@@ -19,14 +19,21 @@ export class GroupService {
   }
 }
 
-let player_1 = new Player({id: 1, name: "Rodrigo Lima", email: "rodrigo@gmail.com", position: Position.MIDDLE})
-let player_2 = new Player({id: 2, name: "Thiago Lima", email: "thiago@gmail.com", position: Position.DEFENSE})
-let player_3 = new Player({id: 3, name: "Flavio jose", email: "flavioo@gmail.com", position: Position.KEEPER})
-let player_4 = new Player({id: 4, name: "Alberto nunes", email: "albert@gmail.com", position: Position.STRIKER})
+let player_1 = new Player({id: 1, name: "Rodrigo Lima", email: "rodrigo@gmail.com", position: Position.MIDDLE,gender: "male",
+birthDate: moment().add(-30, "years"),})
+let player_2 = new Player({id: 2, name: "Thiago Lima",gender: "male",
+birthDate: moment().add(-30, "years"), email: "thiago@gmail.com", position: Position.DEFENSE})
+let player_3 = new Player({id: 3, name: "Flavio jose",gender: "male",
+birthDate: moment().add(-30, "years"), email: "flavioo@gmail.com", position: Position.KEEPER})
+let player_4 = new Player({id: 4, name: "Alberto nunes",gender: "male",
+birthDate: moment().add(-30, "years"), email: "albert@gmail.com", position: Position.STRIKER})
 
-let player_20 = new Player({id: 20, name: "Borges cunha", email: "borges@gmail.com", position: Position.DEFENSE})
-let player_30 = new Player({id: 30, name: "Alex Oliveira", email: "flavioo@gmail.com", position: Position.KEEPER})
-let player_40 = new Player({id: 40, name: "Ivan Camargo", email: "albert@gmail.com", position: Position.STRIKER})
+let player_20 = new Player({id: 20, name: "Borges cunha",gender: "male",
+birthDate: moment().add(-30, "years"), email: "borges@gmail.com", position: Position.DEFENSE})
+let player_30 = new Player({id: 30, name: "Alex Oliveira",gender: "male",
+birthDate: moment().add(-30, "years"), email: "flavioo@gmail.com", position: Position.KEEPER})
+let player_40 = new Player({id: 40, name: "Ivan Camargo",gender: "male",
+birthDate: moment().add(-30, "years"), email: "albert@gmail.com", position: Position.STRIKER})
 
 let gamesPlayed = [
     new GamePlayed({

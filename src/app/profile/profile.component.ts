@@ -17,7 +17,7 @@ import {  Player, Position } from '../models/group';
 })
 export class ProfileComponent implements OnInit {
 
-  player = Player.empty()
+  player = this.data;
   startDate = moment().add(-30, "years")
   
   positions() : Array<string> {
@@ -26,7 +26,7 @@ export class ProfileComponent implements OnInit {
   
   constructor(
     public dialogRef: MatDialogRef<ProfileComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) {}
+    @Inject(MAT_DIALOG_DATA) public data: Player) {}
 
   ngOnInit() {
     

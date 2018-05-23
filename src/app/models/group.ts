@@ -8,21 +8,23 @@ export enum Position {
     KEEPER = "Keeper",
 }
 
-interface IPlayer {
+export interface IPlayer {
     id: number;
     name: string;
     email: string;
     position: Position;
-    birthDate?: moment.Moment;
+    birthDate: moment.Moment;
     groups?: IGroupInfo[];
+    gender: string;
 }
 export class Player {
     id: number;
     name: string;
     email: string;
     position: Position;
-    birthDate?: moment.Moment;
+    birthDate: moment.Moment;
     groups: IGroupInfo[];
+    gender: string;
     
     constructor(player: IPlayer) {
         this.name = player.name;
@@ -31,16 +33,9 @@ export class Player {
         this.birthDate = player.birthDate;
         this.groups = player.groups;
         this.id = player.id;
+        this.gender = player.gender;
     }
 
-    static empty() {
-        return new Player({
-            id: 0,
-            name: "",
-            email: "",
-            position: Position.MIDDLE,
-        })
-    }
 }
 
 export interface IGroupInfo {

@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() { }
 
-  @Input() groups: IGroupInfo[];
+  @Input() player: Player;
 
   @Output() selectGroup: EventEmitter<IGroupInfo> = new EventEmitter();
 
@@ -35,6 +35,7 @@ export class MenuComponent implements OnInit {
     let dialogRef = this.dialog.open(ProfileComponent, {
       width: '300px',
       disableClose: true,
+      data: this.player,
     });
 
     dialogRef.afterClosed().subscribe(result => {

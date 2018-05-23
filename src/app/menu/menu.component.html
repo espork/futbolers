@@ -9,7 +9,7 @@
     <mat-divider></mat-divider>
     <div>
         <button mat-menu-item 
-            *ngFor="let group of groups"
+            *ngFor="let group of player.groups"
             (click)="onSelectGroup(group)">
             {{group.name}}
         </button>
